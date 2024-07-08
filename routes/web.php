@@ -1,14 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GoogleSheetController;
+use App\Http\Controllers\GoogleSheetsController;
 
-Route::get('/import', [GoogleSheetController::class, 'importView'])->name('import.view');
-Route::get('/import/callback', [GoogleSheetController::class, 'importCallback'])->name('import.callback');
-Route::get('/import/data', [GoogleSheetController::class, 'importData'])->name('import.data');
-Route::post('/import/fetch-and-insert', [GoogleSheetController::class, 'fetchAndInsertData'])->name('fetch.and.insert');
-
-
+Route::get('import', [GoogleSheetsController::class, 'import'])->name('import');
+Route::get('auth', [GoogleSheetsController::class, 'auth'])->name('auth');
+Route::get('auth-callback', [GoogleSheetsController::class, 'authCallback'])->name('auth-Callback');
+Route::post('fetch-sheet-data', [GoogleSheetsController::class, 'fetchSheetData'])->name('fetchSheetData');
 
 
 
